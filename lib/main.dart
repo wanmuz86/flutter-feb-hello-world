@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,12 +34,16 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(child: Column(
           children: [
-            Text("Hello World", style: TextStyle(color: Colors.red, fontSize: 40),),
+            Text("Hello World", style: GoogleFonts.singleDay(
+              textStyle: TextStyle(color: Colors.red, fontSize: 40)
+            ),),
             SizedBox(height: 10,),
-            Text("Welcome to my app", style: TextStyle(color: Colors.blue,
-            fontSize: 32),),
+            Text("Welcome to my app", style: GoogleFonts.bebasNeue(
+              textStyle: TextStyle(color: Colors.blue,
+                  fontSize: 32)
+            ),),
             SizedBox(height: 10,),
-            Text("I hope you enjoy it", style: TextStyle(color:Colors.green, fontSize: 24),),
+            Text("I hope you enjoy it", style: GoogleFonts.cuteFont(textStyle: TextStyle(color:Colors.green, fontSize: 24)),),
             SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -48,11 +53,17 @@ class HomePage extends StatelessWidget {
                 Text("This is right")
               ],
             ),
+            SizedBox(height: 10,),
             Image.network("https://cdn.audleytravel.com/4872/3480/79/264526-kuala-lumpur-by-night.jpg"),
             TextField(decoration: InputDecoration(hintText: "Enter your name"),
             controller: nameEditingController,),
             TextButton(onPressed: (){
-              print("Hello ${nameEditingController.text}");
+             // print("Hello ${nameEditingController.text}");
+
+              // Creating the snackbar
+              var snackBar = SnackBar(content: Text("Hello ${nameEditingController.text}"));
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
             }, child: Text("Press me!"))
 
           ],
