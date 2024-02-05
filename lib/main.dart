@@ -31,14 +31,18 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text("Hello World"), backgroundColor: Colors.red,),
       body: Center(child: Column(
         children: [
-          Text("Hello World"),
+          Text("Hello World", style: TextStyle(color: Colors.red, fontSize: 40),),
+          SizedBox(height: 10,),
           Text("Welcome to my app", style: TextStyle(color: Colors.blue,
           fontSize: 32),),
-          Text("I hope you enjoy it"),
+          SizedBox(height: 10,),
+          Text("I hope you enjoy it", style: TextStyle(color:Colors.green, fontSize: 24),),
+          SizedBox(height: 10,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("This is left"),
+              SizedBox(width: 10,),
               Text("This is right")
             ],
           )
