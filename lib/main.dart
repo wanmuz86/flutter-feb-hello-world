@@ -55,6 +55,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             Image.network("https://cdn.audleytravel.com/4872/3480/79/264526-kuala-lumpur-by-night.jpg"),
+            Image.asset("assets/photo.jpg"),
             TextField(decoration: InputDecoration(hintText: "Enter your name"),
             controller: nameEditingController,),
             TextButton(onPressed: (){
